@@ -1,0 +1,15 @@
+package com.app.ioc.dao;
+
+public class UsuarioFactory {
+	
+	// Atributo apuntando directamente a la interface UsuarioService
+	UsuarioService usr;
+	
+	public void insertaUsuario() {
+		usr.insert();
+	}
+	
+	public void eliminaUsuario(int id) {
+		usr.elimina(id);
+	}
+}

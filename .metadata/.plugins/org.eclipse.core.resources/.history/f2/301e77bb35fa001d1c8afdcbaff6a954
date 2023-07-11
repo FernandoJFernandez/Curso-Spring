@@ -1,0 +1,5 @@
+package com.app.ioc.dao;
+
+public interface UsuarioService {
+
+}

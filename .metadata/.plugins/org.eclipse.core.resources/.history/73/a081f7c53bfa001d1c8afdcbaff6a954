@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="jeringa" class="com.app.ioc.Jeringa"></bean>
+	<bean id="bisturi" class="com.app.ioc.Bisturi"></bean>
+	<bean id="opera" class="com.app.ioc.Medico">
+		<!--  <property name="utensilio" ref="jeringa"></property> -->
+		<!--  Usando inversión de control: inyectando dependencia -->
+		<property name="utensilio" ref="bisturi"></property>
+	</bean>
+
+	<bean id="mongo" class="com.app.ioc.dao.UsuarioImplMongo"></bean>
+	<bean id="oracle" class="com.app.ioc.dao.UsuarioImplOracle"></bean>
+	<bean id="ejecutaUsr" class="com.app.ioc.dao.UsuarioFactory">
+		<property name="usr" ref="mongo"></property>
+	</bean>
+
+	
+</beans>
